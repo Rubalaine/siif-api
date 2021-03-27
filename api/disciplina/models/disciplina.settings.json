@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "disciplinas",
+  "info": {
+    "name": "Disciplina",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "horas_semanais": {
+      "type": "float"
+    },
+    "semanas": {
+      "type": "integer"
+    },
+    "docente": {
+      "via": "disciplina",
+      "model": "docente"
+    },
+    "sigla": {
+      "type": "string",
+      "required": true
+    },
+    "inscritos": {
+      "collection": "estudante"
+    }
+  }
+}

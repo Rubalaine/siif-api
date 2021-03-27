@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aulas",
+  "info": {
+    "name": "Aula",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "dia": {
+      "type": "date",
+      "required": true
+    },
+    "inicio": {
+      "type": "time"
+    },
+    "fim": {
+      "type": "time"
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "TEORICA",
+        "PRATICA"
+      ]
+    },
+    "tema": {
+      "type": "string"
+    },
+    "pendente": {
+      "type": "boolean",
+      "default": true
+    },
+    "disciplina": {
+      "model": "disciplina"
+    },
+    "presentes": {
+      "collection": "estudante"
+    }
+  }
+}

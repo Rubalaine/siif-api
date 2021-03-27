@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "docentes",
+  "info": {
+    "name": "docente",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "apelido": {
+      "type": "string"
+    },
+    "formacao": {
+      "type": "enumeration",
+      "enum": [
+        "LICENCIADO",
+        "MESTRADO",
+        "DOUTORADO"
+      ]
+    },
+    "disciplina": {
+      "model": "disciplina",
+      "via": "docente"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "docente"
+    }
+  }
+}
